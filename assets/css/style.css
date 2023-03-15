@@ -26,7 +26,7 @@ body {
 }
 
 /* disturbingly big button but cannot make it to work right now, leave for later */
-.button-area {
+.changing-button {
     width: 300px;
     height: auto; 
     margin-top: 5px;
@@ -39,7 +39,7 @@ body {
     cursor: pointer;
 }
 
-.button-area:hover {
+.changing-button:hover {
     background-color: #fff;
     color: #f6c64c;
 }
