@@ -12,9 +12,28 @@ body {
     margin: 0 auto;
 }
 
-.header {
-    text-align: center;
+header {
+    font-size: 35px;
+    margin-bottom: 10px;
 }
+
+.header {
+    font-size: 23px;
+}
+
+.abc {
+    padding: 5px;
+    font-size: 18px;
+    background-color: #FEFAE0;
+    color: #f6c64c;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.abc:hover {
+    background-color: #fff;
+}
+
 
 #container {
     width: 300px;
@@ -26,7 +45,7 @@ body {
 }
 
 /* disturbingly big button but cannot make it to work right now, leave for later */
-.changing-button {
+#changing-button {
     width: 300px;
     height: auto; 
     margin-top: 5px;
@@ -39,7 +58,31 @@ body {
     cursor: pointer;
 }
 
-.changing-button:hover {
+#changing-button:hover {
     background-color: #fff;
     color: #f6c64c;
 }
+
+#changed-button {
+    width: 300px;
+    height: auto; 
+    margin-top: 5px;
+    padding: 0 10px 0 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #f6c64c;
+    color: #FEFAE0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#result p {
+    font-size: 30px;
+    text-align: center;
+}
+
+#result i {
+    font-size: 45px;
+    text-align: center;
+}
+
