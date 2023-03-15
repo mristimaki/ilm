@@ -49,10 +49,9 @@ ol {
 }
 
 /* disturbingly big button but cannot make it to work right now, leave for later */
-#changing-button {
+.changing-button {
     width: 300px;
     height: auto; 
-    margin-top: 5px;
     padding: 0 10px 0 10px;
     font-size: 25px;
     text-align: center;
@@ -62,12 +61,12 @@ ol {
     cursor: pointer;
 }
 
-#changing-button:hover {
+.changing-button:hover {
     background-color: #fff;
     color: #f6c64c;
 }
 
-#changed-button {
+#score-area {
     width: 300px;
     height: auto; 
     margin-top: 5px;
@@ -77,7 +76,6 @@ ol {
     background-color: #f6c64c;
     color: #FEFAE0;
     border-radius: 7px;
-    cursor: pointer;
 }
 
 #result p {
