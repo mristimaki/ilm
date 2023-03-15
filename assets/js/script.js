@@ -15,11 +15,11 @@ function startQuiz() {
 
     const question = '<h3>This is the first statement...</h3>';
     const options = '<p>First option</p> <br> <p>Second option</p> <br> <p>Third option</p>';
-    const button = '<p>Score: <span id="increment-score">0</span></p>';
+    const button = '<p>Score: </p>';
 
     container.innerHTML += question;
     container.innerHTML += options;
-    container.innerHTML += button;
+    changingButton.innerHTML += button;
     
 }
 
