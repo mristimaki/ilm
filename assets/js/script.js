@@ -1,15 +1,15 @@
-let button = document.getElementsByClassName('top-area', 'bottom-area');
-var display = 0;
+/**
+ * Declaring constants for DOM elements
+ * and possible choices.
+ */
+const container = document.getElementById('container');
+const topArea = document.getElementById('top-area');
+const bottomArea = document.getElementById('bottom-area');
+const button = document.getElementsByClassName('changing-button');
+
 
 function startQuiz() {
-
-    if(display == 1) {
-        button.style.display = 'block';
-        display = 0;
-    } else {
-        button.style.display = 'none';
-        display = 1;
-    }
+    
 }
 
 function displayQuestion() {
