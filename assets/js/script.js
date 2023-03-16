@@ -9,6 +9,8 @@ const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
 const box = document.getElementById('box');
 const scoreArea = document.getElementById('score-area');
+const choiceQue = document.getElementsByClassName('abc');
+const nextButton = document.getElementById('next-button');
 const playAgain = document.getElementById('play-again');
 
  /* 
@@ -34,14 +36,102 @@ function startQuiz() {
     startButton.style.display = 'none';
 }
 
-function checkCorrectAnswer() {
 
+/**
+ * questions and answers
+ */
+let myQuestions = [{
+    question: "This is the first statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 2
+},  
+    {
+        question: "This is the second statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 3
+},        
+    {
+        question: "This is the third statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 1
+},
+    {
+        question: "This is the fourth statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 2
+},
+    {
+        question: "This is the fifth statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 3
+},
+    {
+        question: "This is the sixth statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 2
+},
+    {
+        question: "This is the seventh statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 1
+},
+    {
+        question: "This is the eight statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 2
+},
+    {
+        question: "This is the nineth statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 3
+},
+    {
+        question: "This is the tenth statement..",
+    option1: "This is the first option.",
+    option2: "This is the second option.",
+    option3: "This is the third option.",
+    answer: 1
+    }]
+
+/**
+ * function to play the game and show questions and answers
+ */
+let playQuiz = ()=>{
+    questionNo.innerText = index + 1 +". ";
+    questionText.innerText = myQuestions[index].question;
+    option1.innerText = myQuestions[index].option1;
+    option2.innerText = myQuestions[index].option2;
+    option3.innerText = myQuestions[index].option3;
 }
 
-function incrementScore() {
+playQuiz();
 
-}
-
-function nextQuestion() {
-
-}
+/**
+ * next button that should take the user to next question
+ */
+nextButton.addEventListener('click', ()=>{
+    if (index !== myQuestions.length -1) {
+        index++;
+        choiceQue..forEach(removeActive => {
+            
+        });
+    }
+})
