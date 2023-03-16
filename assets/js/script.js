@@ -7,6 +7,7 @@ const start = document.getElementById('start');
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
+const box = document.getElementById('box');
 const scoreArea = document.getElementById('score-area');
 const playAgain = document.getElementById('play-again');
 
