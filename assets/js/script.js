@@ -114,24 +114,3 @@ let myQuestions = [{
 /**
  * function to play the game and show questions and answers
  */
-let playQuiz = ()=>{
-    questionNo.innerText = index + 1 +". ";
-    questionText.innerText = myQuestions[index].question;
-    option1.innerText = myQuestions[index].option1;
-    option2.innerText = myQuestions[index].option2;
-    option3.innerText = myQuestions[index].option3;
-}
-
-playQuiz();
-
-/**
- * next button that should take the user to next question
- */
-nextButton.addEventListener('click', ()=>{
-    if (index !== myQuestions.length -1) {
-        index++;
-        choiceQue..forEach(removeActive => {
-            
-        });
-    }
-})

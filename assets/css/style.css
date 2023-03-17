@@ -43,6 +43,17 @@ ol {
     background-color: #fff;
 }
 
+/* style for correct and incorrect answer */
+.correct {
+    background-color: #b1d3ad;
+    color: #fff;
+}
+
+.incorrect {
+    background-color: #ff8066;
+    color: #fff;
+}
+
 /* main container */
 #container {
     width: 300px;
