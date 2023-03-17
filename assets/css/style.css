@@ -30,7 +30,7 @@ ol {
 }
 
 /* styling for quiz options */
-.abc {
+.choices {
     padding: 5px;
     font-size: 18px;
     background-color: #FEFAE0;
@@ -39,7 +39,7 @@ ol {
     cursor: pointer;
 }
 
-.abc:hover {
+.choices:hover {
     background-color: #fff;
 }
 

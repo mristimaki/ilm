@@ -35,9 +35,9 @@
         <!-- Quiz area -->
         <div id="quiz">
             <p class="header" id="question">This is the first statement...</p>
-            <p class="abc" id="choice1" data-number="1">This is the first option</p>
-            <p class="abc" id="choice2" data-number="2">This is the second option</p>
-            <p class="abc" id="choice3" data-number="3">This is the third option</p>
+            <p class="choices" id="choice1" data-number="1">This is the first option</p>
+            <p class="choices" id="choice2" data-number="2">This is the second option</p>
+            <p class="choices" id="choice3" data-number="3">This is the third option</p>
 
             <div id="next-button">Next</div>
         </div>
@@ -48,7 +48,7 @@
             <p><i class="fa-regular fa-star"></i>
             <br>
             <br>
-            You've finished the quiz and scored <span>0</span> out of 10!
+            You've finished the quiz and scored <span id="total-score">0</span> out of 10!
             <br>
             <br></p>
         </div>
@@ -60,12 +60,12 @@
             section that holds the divs below container. it first displays a start button, then changes into information about current score when playing the game and finally turns into a option to play again
         -->
     <section id="box">
-        <div id="start-button" class="changing-button" onclick="startQuiz()">
+        <div id="start-button" class="changing-button"">
             <p>Start Quiz</p>
         </div>
 
         <div id="score-area">
-            <p>Score: <span id="increment-score">0</span></p>
+            <p>Score: <span id="current-score">0</span></p>
         </div>
 
         <div id="play-again" class="changing-button" onclick="startQuiz()">
