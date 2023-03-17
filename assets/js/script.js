@@ -2,17 +2,15 @@
  * Declaring constants for DOM elements
  * and possible choices.
  */
-const container = document.getElementById('container');
 const start = document.getElementById('start');
 const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
-const questions = document.getElementById('question');
+const questionQue = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choices'));
 const scoreArea = document.getElementById('score-area');
 const currentScore = document.getElementById('current-score');
 const totalScore = document.getElementById('total-score');
-const nextButton = document.getElementById('next-button');
 const playAgain = document.getElementById('play-again');
 
 let currentQuestion = {};
@@ -37,7 +35,7 @@ const MAX_QUESTIONS = 10;
 /**
  * questions and answers
  */
-let questions = [{
+let myQuestions = [{
     question: "Which sahaba did Prophet Muhammad (ﷺ) help to become free from being a slave by planting 300+ date palm trees?",
     option1: "Bilal ibn Rabah",
     option2: "Salman al Farisi",
@@ -122,66 +120,3 @@ document.getElementById('start-button').addEventListener('click', () => {
 /*
  * function to start the game
  */
-let startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [...questions];
-    getNewQuestion();
-};
-
-getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score);
-
-        return scoreArea.style.display = 'contents', quiz.style.display = 'none';
-    }
-
-/**
- * getting random questions from the array of questions and making sure
- * that we don't get the same question/answer more than one time
- */
-    questionCounter++;
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
-    question.innerText = currentQuestion.question;
-    
-/**
- * defining which choices the user should get within the array of questions
- * and 
- */
-    choices.forEach(choice => {
-        const number = choice.dataset.number;
-        choice.innerText = currentQuestion['choice' + number];
-    });
-    availableQuestions.splice(questionsIndex, 1);
-    acceptingAnswers = true;
-};
-
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-        if (!acceptingAnswers) return;
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset.number;
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-        const correctAnswer = choices[currentQuestion.answer -1];
-        if (classToApply === 'correct') {
-            incrementScore(SCORE_POINTS);
-        } else if (classToApply === 'incorrect') {
-            correctAnswer.classList.add('correct');
-        }
-        selectedChoice.classList.ass(classToApply);
-    });
-});
-
-/**
- * next question button
- */
-document.getElementById('next-button').addEventListener('click', () => {
-    choices.forEach(choice => {
-        choice.classList.remove('incorrect');
-        choice.classList.remove('correct');
-    })
-    getNewQuestion();
-});
