@@ -36,7 +36,7 @@ const MAX_QUESTIONS = 10;
  */
 let myQuestions = [
     {
-        question: 'The word "Al-Yahom" (day) is mentioned in the Quran..',
+        question: 'The word "Al-Yaom" (day) is mentioned in the Quran..',
         answers: [
             {option: '1000 times.', answer: false},
             {option: '365 times.', answer: true},
@@ -52,67 +52,67 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The creation of the embryo was first mentioned..',
+        question: 'The correct stages of development of the embryo was first mentioned..',
         answers: [ 
-            {option: 'by Hans Adolf Eduard Driesch 1890.', answer: false},
-            {option: 'in the Quran over 1400 years ago.', answer: true},
-            {option: 'by Frances Maitland Balfour 1880.', answer:false},
+            {option: 'By Hans Adolf Eduard Driesch 1890.', answer: false},
+            {option: 'In the Quran over 1400 years ago.', answer: true},
+            {option: 'By Frances Maitland Balfour 1880.', answer:false},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'Allah mentions men and women in the Quran..',
         answers: [
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:false},
+            {option: 'Men more than women.', answer: false},
+            {option: 'Women more than men.', answer: false},
+            {option: 'Exactly equal.', answer:true},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'The expansion theory was first mentioned..',
         answers: [
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:true},
+            {option: 'By Edwin Hubble 1929.', answer: false},
+            {option: 'By Georges Lemaître 1920.', answer: false},
+            {option: 'In the Quran over 1400 years ago (surah,verse 51:47).', answer:true},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'The word "Islam" means..',
         answers: [
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:false},
+            {option: 'One who willfully submits (to God).', answer: true},
+            {option: 'To strive.', answer: false},
+            {option: 'Followers of Prophet Muhammad (ﷺ).', answer:false},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'The word "Jihad" means..',
         answers: [
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer:false},
+            {option: 'Holy war.', answer: false},
+            {option: 'To "struggle" or to "strive".', answer: true},
+            {option: 'Martyrdom.', answer:false},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'Prophets is mentioned (by name) in the Quran..',
         answers: [
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:false},
+            {option: '25.', answer: true},
+            {option: '313.', answer: false},
+            {option: '597.', answer:false},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'The angel who will blow the horn to signal the Day of Judgement is..',
         answers: [
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:false},
+            {option: 'Izrafeel.', answer: true},
+            {option: 'Mikaeel.', answer: false},
+            {option: 'Jibreel.', answer:false},
         ],
     },
     {
-        question: 'This is the third statement..',
+        question: 'A muslim should love (after Allah and His Messenger ﷺ )..',
         answers: [
-            {option: 'This is the first option.', answer: true},
-            {option: 'This is the first option.', answer: false},
-            {option: 'This is the first option.', answer:false},
+            {option: 'His mother three times over before his father.', answer: true},
+            {option: 'His father three times over before his mother.', answer: false},
+            {option: 'His father and mother equally.', answer:false},
         ],
     }];
 
