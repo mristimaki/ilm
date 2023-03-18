@@ -7,7 +7,7 @@ const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
 const questionQue = document.getElementById('question');
-const choiceQue = document.getElementsByClassName('choices');
+const choiceQue = document.querySelectorAll('choices');
 const scoreArea = document.getElementById('score-area');
 const currentScore = document.getElementById('current-score');
 const totalScore = document.getElementById('total-score');
@@ -15,10 +15,8 @@ const playAgain = document.getElementById('play-again');
 
 let currentQuestion = 0;
 let score = 0;
-let availableQuestions = [];
 const SCORE_POINTS = 1;
 const MAX_QUESTIONS = 10;
-
  /* 
  * hide quiz and result area when window is loaded and 
  * display the score-area
@@ -128,11 +126,22 @@ let myQuestions = [
         ],
     }];
 
+/**
+ * function for next-button
+ */
+document.getElementById('next-button').addEventListener('click', () => {
+    counter++;
+    display.innerText = myQuestions[counter];
+});
 
 /**
- * function to start the game and let user to get to the next question
- * when user has answered and next-button is clicked 
+ * function to start the game and get the Q&A from array
  */
+let answers = [];
+for (let i = 0; i < myQuestions.length; i++) {
+    answers.push({answered: false, correct: null, answer: null});
+}
+
 function startGame() {
     currentQuestion = 0;
     score = 0;
@@ -144,11 +153,8 @@ function playGame() {
     questionQue.innerHTML = myQuestions[currentQuestion].question;
 
     for (let i = 0; i < choiceQue.length; i++) {
-        choiceQue.innerText = myQuestions[currentQuestion].answers[i].option;
+        const choiceButton = choiceQue[i];
+        choiceButton.lastElementChild.innerHTML = myQuestions[currentQuestion].answers[i].option;
     }
-
-    console.log(playGame);
-    console.log(myQuestions);
-
 }
 
