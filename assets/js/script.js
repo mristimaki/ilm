@@ -7,15 +7,14 @@ const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
 const questionQue = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choices'));
+const choiceQue = document.getElementsByClassName('choices');
 const scoreArea = document.getElementById('score-area');
 const currentScore = document.getElementById('current-score');
 const totalScore = document.getElementById('total-score');
 const playAgain = document.getElementById('play-again');
 
-let currentQuestion = {};
+let currentQuestion = 0;
 let score = 0;
-let questionCounter = 0;
 let availableQuestions = [];
 const SCORE_POINTS = 1;
 const MAX_QUESTIONS = 10;
@@ -30,6 +29,19 @@ const MAX_QUESTIONS = 10;
     scoreArea.style.display = 'none';
     playAgain.style.display = 'none';
 ;}
+
+/**
+ * functions to hide divs when playing the game
+ */
+document.getElementById('start-button').addEventListener('click', () => {
+    quiz.style.display = 'contents';
+    scoreArea.style.display = 'contents';
+    start.style.display = 'none';
+    startButton.style.display = 'none';
+    result.style.display = 'none';
+
+    startGame();
+});
 
 /**
  * questions and answers
@@ -116,23 +128,27 @@ let myQuestions = [
         ],
     }];
 
+
 /**
- * functions to hide divs when playing the game
- */
-document.getElementById('start-button').addEventListener('click', () => {
-    quiz.style.display = 'contents';
-    scoreArea.style.display = 'contents';
-    start.style.display = 'none';
-    startButton.style.display = 'none';
-    result.style.display = 'none';
-});
-
-
-let answer = []
-
-/*
- * function to start the game
+ * function to start the game and let user to get to the next question
+ * when user has answered and next-button is clicked 
  */
 function startGame() {
+    currentQuestion = 0;
+    score = 0;
+
+    playGame();
+}
+
+function playGame() {
+    questionQue.innerHTML = myQuestions[currentQuestion].question;
+
+    for (let i = 0; i < choiceQue.length; i++) {
+        choiceQue.innerText = myQuestions[currentQuestion].answers[i].option;
+    }
+
+    console.log(playGame);
+    console.log(myQuestions);
 
 }
+
