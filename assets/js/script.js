@@ -14,7 +14,6 @@ const totalScore = document.getElementById('total-score');
 const playAgain = document.getElementById('play-again');
 
 let currentQuestion = {};
-let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
@@ -35,76 +34,87 @@ const MAX_QUESTIONS = 10;
 /**
  * questions and answers
  */
-let myQuestions = [{
-    question: "Which sahaba did Prophet Muhammad (ﷺ) help to become free from being a slave by planting 300+ date palm trees?",
-    option1: "Bilal ibn Rabah",
-    option2: "Salman al Farisi",
-    option3: "Zayd ibn Harisa",
-    answer: 2
-},  
+let myQuestions = [
     {
-        question: "Which Angel will blow the horn to signal the Day of Judgement?",
-    option1: "Jibreel",
-    option2: "Israeel",
-    option3: "Izrafeel",
-    answer: 3
-},        
+        question: 'The word "Al-Yahom" (day) is mentioned in the Quran..',
+        answers: [
+            {option: '1000 times.', answer: false},
+            {option: '365 times.', answer: true},
+            {option: '500 times.', answer:false},
+        ],
+    },       
     {
-        question: "This is the third statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 1
-},
+        question: 'The word "Shahr" (month) is mentioned in the Quran..',
+        answers: [
+            {option: '33 times.', answer: false},
+            {option: '99 times.', answer: false},
+            {option: '12 times.', answer:true},
+        ],
+    },
     {
-        question: "This is the fourth statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 2
-},
+        question: 'The creation of the embryo was first mentioned..',
+        answers: [ 
+            {option: 'by Hans Adolf Eduard Driesch 1890.', answer: false},
+            {option: 'in the Quran over 1400 years ago.', answer: true},
+            {option: 'by Frances Maitland Balfour 1880.', answer:false},
+        ],
+    },
     {
-        question: "This is the fifth statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 3
-},
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:false},
+        ],
+    },
     {
-        question: "This is the sixth statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 2
-},
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:true},
+        ],
+    },
     {
-        question: "This is the seventh statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 1
-},
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:false},
+        ],
+    },
     {
-        question: "This is the eight statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 2
-},
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer:false},
+        ],
+    },
     {
-        question: "This is the nineth statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 3
-},
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:false},
+        ],
+    },
     {
-        question: "This is the tenth statement..",
-    option1: "This is the first option.",
-    option2: "This is the second option.",
-    option3: "This is the third option.",
-    answer: 1
-    }]
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:false},
+        ],
+    },
+    {
+        question: 'This is the third statement..',
+        answers: [
+            {option: 'This is the first option.', answer: true},
+            {option: 'This is the first option.', answer: false},
+            {option: 'This is the first option.', answer:false},
+        ],
+    }];
 
 /**
  * functions to hide divs when playing the game
@@ -117,6 +127,12 @@ document.getElementById('start-button').addEventListener('click', () => {
     result.style.display = 'none';
 });
 
+
+let answer = []
+
 /*
  * function to start the game
  */
+function startGame() {
+
+}
