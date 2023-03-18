@@ -34,14 +34,12 @@
 
         <!-- Quiz area -->
         <div id="quiz">
-            <p class="header" id="question">This is where the questions should display.</p>
-            
-            <p class="choices" id="choice1" data-number="1">This is where the first option should be</p>
-            <p class="choices" id="choice2" data-number="2">This is where the second option should be</p>
-            <p class="choices" id="choice3" data-number="3">This is where the third option should be</p>
-
-            <div id="next-button">Next</div>
+            <!-- 
+                content with questions and answers will be added by javascript here
+            -->
+            <div id="next-button" onclick="next()">Next</div>
         </div>
+       
         
         
         <!-- Result Area -->
@@ -57,11 +55,11 @@
 
     </section>
 
-        <!-- 
-            section that holds the divs below container. it first displays a start button, then changes into information about current score when playing the game and finally turns into a option to play again
-        -->
+    <!-- 
+        section that holds the divs below container. it first displays a start button, then changes into information about current score when playing the game and finally turns into a option to play again
+    -->
     <section id="box">
-        <div id="start-button" class="changing-button"">
+        <div id="start-button" class="changing-button">
             <p>Start Quiz</p>
         </div>
 
