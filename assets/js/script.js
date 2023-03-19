@@ -7,6 +7,8 @@ const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
 const scoreArea = document.getElementById('score-area');
+const textQuestion = document.getElementById('header');
+const textOptions = document.getElementById('option-que')
 const currentScore = document.getElementById('current-score');
 const totalScore = document.getElementById('total-score');
 const playAgain = document.getElementById('play-again');
@@ -40,7 +42,6 @@ document.getElementById('start-button').addEventListener('click', () => {
  */
 let myQuestions = [
     {
-        id: 1,
         question: 'The word "Al-Yaom" (day) is mentioned in the Quran..',
         answer: '365 times.',
         options: [
@@ -50,7 +51,6 @@ let myQuestions = [
         ]
     },       
     {
-        id: 2,
         question: 'The word "Shahr" (month) is mentioned in the Quran..',
         answer: '12 times.',
         options: [ 
@@ -60,7 +60,6 @@ let myQuestions = [
         ]
     },
     {
-        id: 3,
         question: 'The correct stages of development of the embryo was first mentioned..',
         answer: 'In the Quran over 1400 years ago.',
         options: [ 
@@ -70,7 +69,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 4,
         question: 'Allah mentions men and women in the Quran..',
         answer: 'Exactly equal.',
         options: [
@@ -80,7 +78,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 5,
         question: 'The expansion theory was first mentioned..',
         answer: 'In the Quran over 1400 years ago (surah,verse 51:47).',
         options: [
@@ -90,7 +87,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 6,
         question: 'The word "Islam" means..',
         answer: 'One who willfully submits (to God).',
         options: [
@@ -100,7 +96,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 7,
         question: 'The word "Jihad" means..',
         answer: 'To "struggle" or to "strive".',
         options: [
@@ -110,7 +105,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 8,
         question: 'Prophets is mentioned (by name) in the Quran..',
         answer: '25.',
         options: [
@@ -120,7 +114,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 9,
         question: 'The angel who will blow the horn to signal the Day of Judgement is..',
         answer: 'Izrafeel.',
         options: [
@@ -130,7 +123,6 @@ let myQuestions = [
         ],
     },
     {
-        id: 10,
         question: 'A muslim should love (after Allah and His Messenger ﷺ )..',
         answer: 'His mother three times over, before his father.',
         options: [
@@ -140,46 +132,27 @@ let myQuestions = [
         ],
     }];
 
-let questionCount = 0;
+let currentQuestion = 0;
 let score = 0;
 
-function startGame(count) {
-    questionCount = 0;
-    let question = document.getElementById('quiz');
-    let [first, second, third] = myQuestions[count].options;
-
-    question.innerHTML = `<p class="header">${count + 1}. ${myQuestions[count].question}</p>`
-    `<p class="choices">${first}</p>
-    <p class="choices">${second}</p>
-    <p class="choices">${third}</p>`;
-
-    choicesActive();
+function startGame() {
+    displayQuestions();
 }
 
-function choicesActive() {
-    let option = document.querySelectorAll('p.choices');
-    for (let i = 0; i < option.length; i++){
-        option[i].onclick = function() {
-            for (let i = 0; i < option.length; i++){
-                if (option[i].classList.contains('active')){
-                    option[i].classList.remove('active');
-                }
-            }
-            option[i].classList.add('active');
-        };
-    }
+function displayQuestions() {
+    
+    textQuestion.innerHTML = myQuestions[currentQuestion].question;
+
+
 }
 
+
+/**
+ * go to next question 
+ */
 function next(){
-    if(questionCount == myQuestions.length -1) {
-        quiz.style.display = 'none';
-        scoreArea.style.display = 'none';
-        start.style.display = 'none';
-        startButton.style.display = 'none';
-        result.style.display = 'contents';
+    if(currentQuestion<9) {
+        currentQuestion++;
+        displayQuestions();
     }
-    console.log(questionCount);
 }
-
-console.log(startGame);
-console.log(activeButtons);
