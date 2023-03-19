@@ -7,8 +7,8 @@ const quiz = document.getElementById('quiz');
 const result = document.getElementById('result');
 const startButton = document.getElementById('start-button');
 const scoreArea = document.getElementById('score-area');
-const textQuestion = document.getElementById('header');
-const textOptions = document.getElementById('option-que')
+const textQuestion = document.getElementById('question-que');
+const textOptions = document.getElementsByClassName('choice-que');
 const currentScore = document.getElementById('current-score');
 const totalScore = document.getElementById('total-score');
 const playAgain = document.getElementById('play-again');
@@ -43,109 +43,110 @@ document.getElementById('start-button').addEventListener('click', () => {
 let myQuestions = [
     {
         question: 'The word "Al-Yaom" (day) is mentioned in the Quran..',
-        answer: '365 times.',
         options: [
-            '1000 times.',
-            '365 times.',
-            '500 times.'
-        ]
+            {option: '1000 times.', answer: false},
+            {option: '365 times.', answer: true},
+            {option: '500 times.', answer: false}
+        ],
     },       
     {
         question: 'The word "Shahr" (month) is mentioned in the Quran..',
-        answer: '12 times.',
         options: [ 
-            '33 times.',
-            '99 times.',
-            '12 times.',
-        ]
+            {option: '33 times.', answer: false},
+            {option: '99 times.', answer: false},
+            {option: '12 times.', answer: true}
+        ],
     },
     {
         question: 'The correct stages of development of the embryo was first mentioned..',
-        answer: 'In the Quran over 1400 years ago.',
         options: [ 
-            'By Hans Adolf Eduard Driesch 1890.',
-            'In the Quran over 1400 years ago.',
-            'By Frances Maitland Balfour 1880.',
+            {option: 'By Hans Adolf Eduard Driesch 1890.', answer: false},
+            {option: 'In the Quran over 1400 years ago. (surah: verses 23:12-14)', answer: true},
+            {option: 'By Frances Maitland Balfour 1880.', answer: false}
         ],
     },
     {
         question: 'Allah mentions men and women in the Quran..',
-        answer: 'Exactly equal.',
         options: [
-            'Men more than women.',
-            'Women more than men.',
-            'Exactly equal.'
+            {option: 'Men more than women.', answer: false},
+            {option: 'Women more than men.', answer: false},
+            {option: 'Exactly equal.', answer: true}
         ],
     },
     {
         question: 'The expansion theory was first mentioned..',
-        answer: 'In the Quran over 1400 years ago (surah,verse 51:47).',
         options: [
-            'By Edwin Hubble 1929.',
-            'By Georges Lemaître 1920.',
-            'In the Quran over 1400 years ago (surah,verse 51:47).'
+            {option: 'By Edwin Hubble 1929.', answer: false},
+            {option: 'By Georges Lemaître 1920.', answer: false},
+            {option: 'In the Quran over 1400 years ago (surah:verse 51:47).', answer: true}
         ],
     },
     {
         question: 'The word "Islam" means..',
-        answer: 'One who willfully submits (to God).',
         options: [
-            'One who willfully submits (to God).',
-            'To strive.',
-            'Followers of Prophet Muhammad (ﷺ).'
+            {option: 'One who willfully submits (to God).', answer: true},
+            {option: 'To strive.', answer: false},
+            {option: 'Followers of Prophet Muhammad (ﷺ).', answer: false}
         ],
     },
     {
         question: 'The word "Jihad" means..',
-        answer: 'To "struggle" or to "strive".',
         options: [
-            'Holy war.',
-            'To "struggle" or to "strive".',
-            'Martyrdom.'
+            {option: 'Holy war.', answer: false},
+            {option: 'To "struggle" or to "strive".', answer: true},
+            {option: 'Martyrdom.', answer: false}
         ],
     },
     {
         question: 'Prophets is mentioned (by name) in the Quran..',
-        answer: '25.',
         options: [
-            '25.',
-            '313.',
-            '597.'
+            {option: '25.', answer: true},
+            {option: '313.', answer: false},
+            {option: '597.', answer: false}
         ],
     },
     {
         question: 'The angel who will blow the horn to signal the Day of Judgement is..',
-        answer: 'Izrafeel.',
         options: [
-            'Izrafeel.',
-            'Mikaeel.',
-            'Jibreel.'
+            {option: 'Izrafeel.', answer: true},
+            {option: 'Mikaeel.', answer: false},
+            {option: 'Jibreel.', answer: false}
         ],
     },
     {
         question: 'A muslim should love (after Allah and His Messenger ﷺ )..',
-        answer: 'His mother three times over, before his father.',
         options: [
-            'His mother three times over, before his father.',
-            'His father three times over, before his mother.',
-            'His father and mother equally.'
+            {option: 'His mother three times over, before his father.', answer: true},
+            {option: 'His father three times over, before his mother.', answer: false},
+            {option: 'His father and mother equally.', answer: false}
         ],
     }];
 
 let currentQuestion = 0;
 let score = 0;
 
+/**
+ * initialize empty answers array and push new entry to the array for each question
+ */
+let options = [];
+for (let i = 0; i < myQuestions.length; i++) {
+    options.push({answered: false, correct: null, answer: null});
+}
+
+
 function startGame() {
     displayQuestions();
 }
 
 function displayQuestions() {
-    
+    //display question from array
     textQuestion.innerHTML = myQuestions[currentQuestion].question;
-
-
+    //display options from array
+    for (let i = 0; i < textOptions.length; i++) {
+        const btn = textOptions[i];
+        btn.innerHTML = myQuestions[currentQuestion].options[i].option;
+    }
 }
-
 
 /**
  * go to next question 

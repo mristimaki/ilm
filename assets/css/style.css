@@ -20,18 +20,22 @@ header {
 }
 
 /* header inside container */
-#header {
+.header {
     font-size: 21px;
 }
 
 /* font-size for ordered list */
-ol {
+li {
     font-size: 18px;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
 /* styling for quiz options */
-.choices {
+.choice-que {
     padding: 5px;
+    margin-bottom: 5px;
+    margin-right: 15px;
     font-size: 18px;
     background-color: #FEFAE0;
     color: #f6c64c;
@@ -39,7 +43,7 @@ ol {
     cursor: pointer;
 }
 
-.choices:hover {
+.choice-que:hover {
     background-color: #fff;
 }
 
