@@ -130,7 +130,7 @@ let answers = [];
 for (let i = 0; i < myQuestions.length; i++) {
     options.push({answered: false, correct: null, answer: null});
 }
- */
+*/
 
 function startGame() {
 
