@@ -58,10 +58,26 @@ Picture with total score page and icon along with description
 
 ### Page Elements
 
+#### The Header
+
+Picture of header and some text..
+
+#### The Introduction
+
+Explaining intro page..
+
+#### The Game Area
+
+Picture of and explaining the quiz area..
+
+#### The Final Scores Area
+
+Picture and explaining the score area..
+
 
 ### Feature Ideas
 - 
-- 
+
 
 ## Technologies used
 
@@ -105,6 +121,8 @@ Picture with total score page and icon along with description
 ## Deployment
 
 ### GitHub Deployment
+
+Explaining the steps how I deployed the project and live link
 
 ## Credit and Contact
 
