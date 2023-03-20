@@ -124,10 +124,13 @@ let myQuestions = [
 
 let currentQuestion = 0;
 var score = 0;
+
+/**
 let answers = [];
 for (let i = 0; i < myQuestions.length; i++) {
     options.push({answered: false, correct: null, answer: null});
 }
+ */
 
 function startGame() {
 
@@ -137,24 +140,29 @@ function startGame() {
 
 function displayQuestions() {
 
+    let thisQuestion = myQuestions[currentQuestion];
     //display question from array
     textQuestion.innerHTML = myQuestions[currentQuestion].question;
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
         var btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
+        
+        if (thisQuestion.options[i].option.answer === true) {
+            //add eventlistener?
+            btn.classList.add('correct');
+        } else {
+            //add eventlistener?
+            btn.classList.add('incorrect')
+        }
     }
 
-    if (oprions[currentQuestion].answered === false) {
+    if (options[currentQuestion].answer === false) {
         btn.onclick = () => {
             disableOptions();
             const is_correct_answer = myQuestions[currentQuestion].options[i].answer;
 
-            options[currentQuestion].answered = true;
-            options[currentQuestion].correct = is_correct_answer;
-            options[currentQuestion].answer = i;
-
-            if (is_correct_answer) {
+            if (is_correct_answer = true) {
                 score++
                 incrementScore();
             } else {
@@ -195,8 +203,7 @@ function enableOptions(){
  */
 function incrementScore() {
 
-    let oldScore = parseInt(document.getElementById('current-score').innerText);
-    document.getElementById('current-score').innerText = ++oldScore;
+    document.getElementById('current-score').innerText = score;
 
 }
 
@@ -207,6 +214,7 @@ function next() {
 
     if(currentQuestion<9) {
         currentQuestion++;
+        enableOptions();
         displayQuestions();
     }
 
