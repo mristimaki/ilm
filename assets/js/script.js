@@ -124,6 +124,7 @@ let myQuestions = [
 
 let currentQuestion = 0;
 let score = 0;
+let acceptingAnswers = false;
 
 /**
  * initialize empty answers array and push new entry to the array for each question
@@ -132,7 +133,6 @@ let options = [];
 for (let i = 0; i < myQuestions.length; i++) {
     options.push({answered: false, correct: null, answer: null});
 }
-
 
 function startGame() {
 
@@ -146,44 +146,29 @@ function displayQuestions() {
     textQuestion.innerHTML = myQuestions[currentQuestion].question;
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
-        const btn = textOptions[i];
+        var btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
     }
-}
 
-
-/**
- * checking if the answer is true/false
- */
-function checkAnswer() {
-    
-    let userAnswer = parseInt.document.getElementById('total-score');
-    let isCorrect = userAnswer === calculatedAnswer();
-
-    if (isCorrect) {
-        alert('You got it right!');
-    } else {
-        alert(`Sorry, you answered ${userAnswer}. The correct answer was ${calculatedAnswer}`)
-    }
 }
 
 /**
- * go to next question 
- */
-function next(){
-
-    if(currentQuestion<9) {
-        currentQuestion++;
-        displayQuestions();
-    }
-}
-
-/**
- * gets the current score from DOM and increments it by 1
+ * increment current score 
  */
 function incrementScore() {
 
     let oldScore = parseInt(document.getElementById('current-score').innerText);
     document.getElementById('current-score').innerText = ++oldScore;
 
+}
+
+/**
+ * go to next question 
+ */
+function next() {
+
+    if(currentQuestion<9) {
+        currentQuestion++;
+        displayQuestions();
+    }
 }
