@@ -123,16 +123,7 @@ let myQuestions = [
     }];
 
 let currentQuestion = 0;
-let score = 0;
-let acceptingAnswers = false;
-
-/**
- * initialize empty answers array and push new entry to the array for each question
- */
-let options = [];
-for (let i = 0; i < myQuestions.length; i++) {
-    options.push({answered: false, correct: null, answer: null});
-}
+var score = 0;
 
 function startGame() {
 
