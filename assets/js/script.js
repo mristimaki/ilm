@@ -123,7 +123,7 @@ let myQuestions = [
     }];
 
 let currentQuestion = 0;
-var score = 0;
+let score = 0;
 
 /**
 let answers = [];
@@ -140,7 +140,6 @@ function startGame() {
 
 function displayQuestions() {
 
-    let thisQuestion = myQuestions[currentQuestion];
     //display question from array
     textQuestion.innerHTML = myQuestions[currentQuestion].question;
     //display options from array
@@ -148,32 +147,35 @@ function displayQuestions() {
         var btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
         
-        if (thisQuestion.options[i].option.answer === true) {
-            //add eventlistener?
-            btn.classList.add('correct');
-        } else {
-            //add eventlistener?
-            btn.classList.add('incorrect')
-        }
     }
 
-    if (options[currentQuestion].answer === false) {
-        btn.onclick = () => {
-            disableOptions();
-            const is_correct_answer = myQuestions[currentQuestion].options[i].answer;
-
-            if (is_correct_answer = true) {
-                score++
-                incrementScore();
-            } else {
-                textOptions.onclick = undefined;
-            }
-        }
-    }
-
+    checkAnswer();
     console.log(displayQuestions);
+
 }
 
+/**
+ * function to check if user has clicked the true/false option
+ */
+const choices = document.querySelectorAll('.choice-que');
+
+function checkAnswer() {
+    choices.forEach(choice => choice.addEventListener('click', checkAnswer));
+
+    let correct = myQuestions[currentQuestion].options[i].option.answer;
+    if (correct === true){
+        correct.setAttribute('id', 'correct');
+        score++;
+        incrementScore();
+    }
+    
+}
+
+console.log(checkAnswer);
+
+/**
+ * myQuestions[0].options.find(element => element.answer === true);
+ */
 
 
 /**
@@ -184,7 +186,7 @@ function disableOptions() {
     for (let i = 0; i < textOptions.length; i++){
         textOptions[i].disabled = true;
     }
-    console.log(disableOptions);
+    
 }
 
 /**

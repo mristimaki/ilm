@@ -8,6 +8,7 @@
     <meta name="keywords" content="quiz, game, islam, funfacts, religion, knowledge, science">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image" href="assets/images/favicon.ico">
     <script src="https://kit.fontawesome.com/0f6c63645a.js" crossorigin="anonymous"></script>
     <title>Islamic Quiz Game</title>
 </head>
@@ -36,9 +37,9 @@
         <div id="quiz">
             <p class="header" id="question-que">This is where the question should display..</p>
 
-            <p class="choice-que">This is the first option</p>
-            <p class="choice-que">This is the second option</p>
-            <p class="choice-que">This is the third option</p>
+            <p data-type="first" class="choice-que">This is the first option</p>
+            <p data-type="second" class="choice-que">This is the second option</p>
+            <p data-type="third" class="choice-que">This is the third option</p>
             
             <div id="next-button" onclick="next()">Next</div>
         </div>
