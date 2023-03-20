@@ -124,6 +124,10 @@ let myQuestions = [
 
 let currentQuestion = 0;
 var score = 0;
+let answers = [];
+for (let i = 0; i < myQuestions.length; i++) {
+    options.push({answered: false, correct: null, answer: null});
+}
 
 function startGame() {
 
@@ -139,6 +143,49 @@ function displayQuestions() {
     for (let i = 0; i < textOptions.length; i++) {
         var btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
+    }
+
+    if (oprions[currentQuestion].answered === false) {
+        btn.onclick = () => {
+            disableOptions();
+            const is_correct_answer = myQuestions[currentQuestion].options[i].answer;
+
+            options[currentQuestion].answered = true;
+            options[currentQuestion].correct = is_correct_answer;
+            options[currentQuestion].answer = i;
+
+            if (is_correct_answer) {
+                score++
+                incrementScore();
+            } else {
+                textOptions.onclick = undefined;
+            }
+        }
+    }
+
+    console.log(displayQuestions);
+}
+
+
+
+/**
+ * function to disable options when one is clicked
+ */
+function disableOptions() {
+
+    for (let i = 0; i < textOptions.length; i++){
+        textOptions[i].disabled = true;
+    }
+    console.log(disableOptions);
+}
+
+/**
+ * function to enable options
+ */
+function enableOptions(){
+
+    for (let i = 0; i < textOptions.length; i++) {
+        textOptions[i].disabled = false;
     }
 
 }
@@ -162,4 +209,5 @@ function next() {
         currentQuestion++;
         displayQuestions();
     }
+
 }
