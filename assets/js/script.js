@@ -146,10 +146,9 @@ function displayQuestions() {
     for (let i = 0; i < textOptions.length; i++) {
         var btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
-        
+        checkAnswer();
     }
 
-    checkAnswer();
     console.log(displayQuestions);
 
 }
@@ -157,17 +156,18 @@ function displayQuestions() {
 /**
  * function to check if user has clicked the true/false option
  */
+
 const choices = document.querySelectorAll('.choice-que');
+choices.forEach(choice => choice.addEventListener('click', checkAnswer));
 
 function checkAnswer() {
-    choices.forEach(choice => choice.addEventListener('click', checkAnswer));
-
-    let correct = myQuestions[currentQuestion].options[i].option.answer;
-    if (correct === true){
-        correct.setAttribute('id', 'correct');
+    
+    let correctAnswer = myQuestions[0].options.find(element => element.answer === true);
+        if (correctAnswer === true){
+        correctAnswer.setAttribute('id', 'correct');
         score++;
         incrementScore();
-    }
+        } 
     
 }
 
