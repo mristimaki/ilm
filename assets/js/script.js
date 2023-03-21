@@ -161,17 +161,22 @@ const choices = document.querySelectorAll('.choice-que');
 choices.forEach(choice => choice.addEventListener('click', checkAnswer));
 
 function checkAnswer() {
-    
+    console.log(checkAnswer);
+
     let correctAnswer = myQuestions[0].options.find(element => element.answer === true);
-        if (correctAnswer === true){
-        correctAnswer.setAttribute('id', 'correct');
+    console.log(correctAnswer);
+
+        if (correctAnswer.option === this.innerText){
         score++;
         incrementScore();
-        } 
+        disableOptions();
+        } else {
+        
+        }
+        
     
 }
 
-console.log(checkAnswer);
 
 /**
  * myQuestions[0].options.find(element => element.answer === true);
