@@ -5,7 +5,7 @@
 I have created a simple design with clear instructions on how to play the game...
 <br>
 <br>
-<img width="961" alt="amiresponsive" src="https://user-images.githubusercontent.com/121927123/226245839-e18661de-35ac-40db-986d-e66daae747fe.png">
+<img width="1030" alt="amiresponsive" src="https://user-images.githubusercontent.com/121927123/226690363-4ae23e4b-1b32-4c2b-a276-f6793e23c9cd.png">
 
 ## UX
 
