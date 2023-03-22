@@ -42,7 +42,7 @@ document.getElementById('start-button').addEventListener('click', () => {
  */
 let myQuestions = [
     {
-        question: 'The word "Al-Yaom" (day) is mentioned in the Quran..',
+        question: '1. The word "Al-Yaom" (day) is mentioned in the Quran..',
         options: [
             {option: '1000 times', answer: false},
             {option: '365 times', answer: true},
@@ -50,7 +50,7 @@ let myQuestions = [
         ],
     },       
     {
-        question: 'The word "Shahr" (month) is mentioned in the Quran..',
+        question: '2. The word "Shahr" (month) is mentioned in the Quran..',
         options: [ 
             {option: '33 times', answer: false},
             {option: '99 times', answer: false},
@@ -58,7 +58,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The correct stages of development of the embryo was first mentioned..',
+        question: '3. The correct stages of development of the embryo was first mentioned..',
         options: [ 
             {option: 'By Hans Adolf Eduard Driesch 1890', answer: false},
             {option: 'In the Quran over 1400 years ago (surah: verses 23:12-14)', answer: true},
@@ -66,7 +66,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'Allah mentions men and women in the Quran..',
+        question: '4. Allah mentions men and women in the Quran..',
         options: [
             {option: 'Men more than women', answer: false},
             {option: 'Women more than men', answer: false},
@@ -74,7 +74,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The expansion theory was first mentioned..',
+        question: '5. The expansion theory was first mentioned..',
         options: [
             {option: 'By Edwin Hubble 1929', answer: false},
             {option: 'By Georges Lemaître 1920', answer: false},
@@ -82,7 +82,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The word "Islam" means..',
+        question: '6. The word "Islam" means..',
         options: [
             {option: 'One who willfully submits (to God)', answer: true},
             {option: 'To strive', answer: false},
@@ -90,7 +90,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The word "Jihad" means..',
+        question: '7. The word "Jihad" means..',
         options: [
             {option: 'Holy war', answer: false},
             {option: 'To "struggle" or to "strive"', answer: true},
@@ -98,7 +98,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'Prophets is mentioned (by name) in the Quran..',
+        question: '8. Prophets is mentioned (by name) in the Quran..',
         options: [
             {option: '25', answer: true},
             {option: '3', answer: false},
@@ -106,7 +106,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'The angel who will blow the horn to signal the Day of Judgement is..',
+        question: '9. The angel who will blow the horn to signal the Day of Judgement is..',
         options: [
             {option: 'Izrafeel', answer: true},
             {option: 'Mikaeel', answer: false},
@@ -114,7 +114,7 @@ let myQuestions = [
         ],
     },
     {
-        question: 'A muslim should love (after Allah and His Messenger ﷺ )..',
+        question: '10. A muslim should love (after Allah and His Messenger ﷺ )..',
         options: [
             {option: 'His mother three times over, before his father', answer: true},
             {option: 'His father three times over, before his mother', answer: false},
@@ -167,41 +167,35 @@ function checkAnswer() {
     console.log(correctAnswer);
 
         if (correctAnswer.option === this.innerText){
+        console.log("That's correct!")
         score++;
         incrementScore();
-        disableOptions();
         } else {
-        
+            console.log("Sorry, that was not correct. Try again next time.");
         }
         
-    
 }
 
-
 /**
- * myQuestions[0].options.find(element => element.answer === true);
- */
-
-
-/**
- * function to disable options when one is clicked
+ * function to add class when option is clicked (so that the user only can
+ * click one option per question)
  */
 function disableOptions() {
 
-    for (let i = 0; i < textOptions.length; i++){
-        textOptions[i].disabled = true;
-    }
-    
+    document.getElementById('option1').style.pointerEvents = 'none';
+    document.getElementById('option2').style.pointerEvents = 'none';
+    document.getElementById('option3').style.pointerEvents = 'none';
+
 }
 
 /**
- * function to enable options
+ * function to remove class when next button is clicked
  */
 function enableOptions(){
 
-    for (let i = 0; i < textOptions.length; i++) {
-        textOptions[i].disabled = false;
-    }
+    document.getElementById('option1').style.pointerEvents = 'all';
+    document.getElementById('option2').style.pointerEvents = 'all';
+    document.getElementById('option3').style.pointerEvents = 'all';
 
 }
 

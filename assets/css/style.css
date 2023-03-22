@@ -51,13 +51,11 @@ li {
 .correct {
     background-color: #b1d3ad;
     color: #fff;
-    pointer-events: none;
 }
 
 .incorrect {
     background-color: #ff8066;
     color: #fff;
-    pointer-events: none;
 }
 
 .userchoice {
