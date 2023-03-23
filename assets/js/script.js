@@ -125,16 +125,14 @@ let myQuestions = [
 let currentQuestion = 0;
 let score = 0;
 
-/**
-let answers = [];
-for (let i = 0; i < myQuestions.length; i++) {
-    options.push({answered: false, correct: null, answer: null});
-}
-*/
-
 function startGame() {
 
-    displayQuestions();
+    textQuestion.innerHTML = myQuestions[0].question;
+    //display options from array
+    for (let i = 0; i < textOptions.length; i++) {
+        var btn = textOptions[i];
+        btn.innerHTML = myQuestions[0].options[i].option;
+    }
 
 }
 
@@ -149,31 +147,42 @@ function displayQuestions() {
         checkAnswer();
     }
 
-    console.log(displayQuestions);
+    if (btn.classList.contains('incorrect')) {
+        btn.classList.remove('incorrect');
+    }
 
+    if (btn.classList.contains('correct')) {
+        btn.classList.remove('correct');
+    }
+
+    console.log(displayQuestions);
+    
 }
 
 /**
  * function to check if user has clicked the true/false option
  */
-
 const choices = document.querySelectorAll('.choice-que');
 choices.forEach(choice => choice.addEventListener('click', checkAnswer));
 
 function checkAnswer() {
     console.log(checkAnswer);
-
-    let correctAnswer = myQuestions[0].options.find(element => element.answer === true);
+    
+    let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true);
+    
+        if (correctAnswer.option === this.innerText){  
+            this.classList.add('correct');
+            console.log("That's correct!");
+            score++;
+            incrementScore();
+            } 
+            else {
+                this.classList.add('incorrect');
+                console.log("Sorry, that was not correct. Try again next time!");
+                }
+    
     console.log(correctAnswer);
 
-        if (correctAnswer.option === this.innerText){
-        console.log("That's correct!")
-        score++;
-        incrementScore();
-        } else {
-            console.log("Sorry, that was not correct. Try again next time.");
-        }
-        
 }
 
 /**
@@ -208,15 +217,3 @@ function incrementScore() {
 
 }
 
-/**
- * go to next question 
- */
-function next() {
-
-    if(currentQuestion<9) {
-        currentQuestion++;
-        enableOptions();
-        displayQuestions();
-    }
-
-}

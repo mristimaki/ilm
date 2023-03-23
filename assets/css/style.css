@@ -90,26 +90,6 @@ li {
     color: #f6c64c;
 } 
 
-/* next button */
-/* goes outside of container for some reason */
-#next-button {
-    width: 100px;
-    height: auto;
-    padding: 3px;
-    background-color: #fff;
-    color: #f6c64c;
-    font-size: 20px;
-    text-align: center;
-    float: right;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-#next-button:hover {
-    background-color: #f6c64c;
-    color: #fff;
-}
-
 /* box that shows users current score */
 /* background color doesn't work */
 #score-area {
