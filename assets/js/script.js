@@ -122,6 +122,7 @@ let myQuestions = [
         ],
     }];
 
+//set questions and score 
 let currentQuestion = 0;
 let score = 0;
 
@@ -181,8 +182,9 @@ function checkAnswer() {
                 console.log("Sorry, that was not correct. Try again next time!");
                 }
     
+    setTimeout(displayQuestions, 3000);
     console.log(correctAnswer);
-
+    
 }
 
 /**
