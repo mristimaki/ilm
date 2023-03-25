@@ -182,14 +182,24 @@ function checkAnswer() {
                 console.log("Sorry, that was not correct. Try again next time!");
                 }
     
-    setTimeout(displayQuestions, 3000);
+    nextTimer();
     console.log(correctAnswer);
     
 }
 
 /**
- * function to add class when option is clicked (so that the user only can
- * click one option per question)
+ * function to set timer when a answer is clicked, then go to next question
+ */
+function nextTimer() {
+
+    setTimeout(function() {
+        displayQuestions[currentQuestion]
+    }, 3000);
+
+}
+
+/**
+ * function that disable options once one is clicked
  */
 function disableOptions() {
 
@@ -200,7 +210,7 @@ function disableOptions() {
 }
 
 /**
- * function to remove class when next button is clicked
+ * function to enable options when next question is comming
  */
 function enableOptions(){
 
