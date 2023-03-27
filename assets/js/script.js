@@ -131,9 +131,11 @@ function startGame() {
     textQuestion.innerHTML = myQuestions[0].question;
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
-        var btn = textOptions[i];
+        let btn = textOptions[i];
         btn.innerHTML = myQuestions[0].options[i].option;
     }
+
+    displayQuestions();
 
 }
 
@@ -143,11 +145,13 @@ function displayQuestions() {
     textQuestion.innerHTML = myQuestions[currentQuestion].question;
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
-        var btn = textOptions[i];
+        let btn = textOptions[i];
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
-        checkAnswer();
     }
 
+
+    /** 
+    //remove class when new question is displayed
     if (btn.classList.contains('incorrect')) {
         btn.classList.remove('incorrect');
     }
@@ -155,9 +159,10 @@ function displayQuestions() {
     if (btn.classList.contains('correct')) {
         btn.classList.remove('correct');
     }
-
-    console.log(displayQuestions);
+    */
     
+    enableOptions();
+    console.log(displayQuestions);
 }
 
 /**
@@ -172,29 +177,46 @@ function checkAnswer() {
     let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true);
     
         if (correctAnswer.option === this.innerText){  
+            /** 
             this.classList.add('correct');
+            */
             console.log("That's correct!");
             score++;
             incrementScore();
             } 
             else {
+                /** 
                 this.classList.add('incorrect');
+                */
                 console.log("Sorry, that was not correct. Try again next time!");
                 }
     
-    nextTimer();
+    setTimeout(nextQuestion, 3000);
     console.log(correctAnswer);
     
+}
+
+
+/**
+ * function to go to next question
+ */
+function nextQuestion() {
+
+    currentQuestion += 1;
+    displayQuestions();
+
 }
 
 /**
  * function to set timer when a answer is clicked, then go to next question
  */
-function nextTimer() {
+let timeout = undefined;
 
-    setTimeout(function() {
-        displayQuestions[currentQuestion]
-    }, 3000);
+function startTimeout(callback) {
+
+    timeout = setTimeout(callback, 3000);
+
+    console.log(startTimeout);
 
 }
 
