@@ -75,7 +75,7 @@ li {
 }
 
 /* start quiz button */
-.changing-button {
+#start-button {
     width: 300px;
     height: auto; 
     padding: 0 10px 0 10px;
@@ -87,9 +87,22 @@ li {
     cursor: pointer;
 }
 
-.changing-button:hover {
+#start-button:hover {
     background-color: #fff;
     color: #f6c64c;
+} 
+
+/* play again button */
+#play-again {
+    font-size: 25px;
+    text-align: center;
+    color: #f6c64c;
+    cursor: pointer;
+}
+
+#play-again:hover {
+    color: #f6c64c;
+    font-weight: bold;
 } 
 
 /* box that shows users current score */

@@ -41,8 +41,6 @@ document.getElementById('start-button').addEventListener('click', () => {
     startGame();
 });
 
-
-
 /**
  * questions and answers array
  */
@@ -147,7 +145,6 @@ function startGame() {
     displayQuestions();
 
 }
-
 
 /**
  * function to display the questions and answers from array
