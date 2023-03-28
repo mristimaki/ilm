@@ -9,13 +9,12 @@ const startButton = document.getElementById('start-button');
 const scoreArea = document.getElementById('score-area');
 const textQuestion = document.getElementById('question-que');
 const textOptions = document.getElementsByClassName('choice-que');
-const currentScore = document.getElementById('current-score');
 const playAgain = document.getElementById('play-again');
 
 //gets the user to startpage when clicked
 playAgain.addEventListener ('click', ()=> {
     window.location.assign("index.html");
-})
+});
 
  /* 
  * hide quiz and result area when window is loaded and 
@@ -191,9 +190,9 @@ function checkAnswer() {
         } else {
             //add class if incorrect
             this.classList.add('incorrect');
-        };
+        }
     //skips to next question after 1sec when answer is clicked
-    setTimeout(nextQuestion, 1000) 
+    setTimeout(nextQuestion, 1000); 
     console.log(correctAnswer);
     
 }
