@@ -12,6 +12,10 @@ const textOptions = document.getElementsByClassName('choice-que');
 const currentScore = document.getElementById('current-score');
 const playAgain = document.getElementById('play-again');
 
+playAgain.addEventListener ('click', ()=> {
+    window.location.assign("index.html");
+})
+
  /* 
  * hide quiz and result area when window is loaded and 
  * display the score-area
@@ -35,6 +39,8 @@ document.getElementById('start-button').addEventListener('click', () => {
 
     startGame();
 });
+
+
 
 /**
  * questions and answers array
@@ -152,18 +158,19 @@ function displayQuestions() {
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
         let btn = textOptions[i];
+        if (btn.classList.contains('incorrect')) {
+            btn.classList.remove('incorrect');
+        }
+    
+        if (btn.classList.contains('correct')) {
+            btn.classList.remove('correct');
+        }
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
     }
 
     /** 
     //remove class when new question is displayed
-    if (btn.classList.contains('incorrect')) {
-        btn.classList.remove('incorrect');
-    }
-
-    if (btn.classList.contains('correct')) {
-        btn.classList.remove('correct');
-    }
+    
     */
     
     //enables options again once the user gets to next question
@@ -182,26 +189,18 @@ function checkAnswer() {
     
     let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true);
         //checks if answer is true or false as well as updating score
-        if (correctAnswer.option === this.innerText){  
-            /** 
-            this.classList.add('correct');
-            */
-            console.log("That's correct!");
+       
+        if (correctAnswer.option === this.innerText){
             score++;
             incrementScore();
-            } 
-            else {
-                /** 
-                this.classList.add('incorrect');
-                */
-                console.log("Sorry, that was not correct. Try again next time!");
-                }
-    
-    setTimeout(nextQuestion, 1000);
+            this.classList.add('correct');
+        } else {
+            this.classList.add('incorrect');
+        };
+    setTimeout(nextQuestion, 1000) 
     console.log(correctAnswer);
     
 }
-
 
 /**
  * function to go to next question and at end of game, displays the result area
@@ -220,7 +219,14 @@ function nextQuestion() {
         startButton.style.display = 'none';
         result.style.display = 'contents';
         playAgain.style.display = 'contents';
+        startOver();
     }
+
+}
+
+function startOver() {
+
+    document.getElementById('play-again').addEventListener('click', startGame);
 
 }
 
