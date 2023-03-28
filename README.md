@@ -127,21 +127,33 @@ The design of [The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) is responsiv
 - Difficulties with adding the correct and incorrect classes to users option, to change into green if correct and red if incorrect......
 
 ### Unfixed Bugs
-- I have not managed to get the classes to apply if true/false....
+- When script.js is checked in [JSHint](https://jshint.com/), I get warnings about "is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)."
+- When script.js is checked in [JSHint](https://jshint.com/), I get "unused variable disableOptions()". But this is targeted from within the index.html with onclick="disableOptions".
 
 ## Deployment
 
 ### GitHub Deployment
 
-Explaining the steps how I deployed the project and live link
+- This site was deployed to GitHub pages. The steps to deploy are as follows.
+  - In the GitHub repository, navigate to **Settings**
+  - Scroll down and navigate to **Pages**
+  - From the **Source** section drop-down menu, select the **Main Branch**
+  - Once the Main Branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  - It might take a minute or so before getting the deployed link.
+
+The live link can be found here:
+https://mristimaki.github.io/ilmQuiz/
 
 ## Credit and Contact
 
+### Code
+- My Questions and Answers array is taken from this [Code Institute Submission](https://github.com/Code-Institute-Submissions/Quiz-me-Sailor/blob/main/assets/js/script.js)
+
 ### Content
 - The information to the Quiz is taken from:
-  - 
-  -
-  -
+  - [Amazing Quran Miracle](https://www.youtube.com/watch?v=sYajKl-Xr6c)
+  - [Sapient Thoughts #26](https://www.youtube.com/watch?v=HDMR4MMtDs0)
+  - [Islamic Quiz](https://muslimcouncil.org.hk/islamic-quiz-questions-answers/)
  
  ### Contact
  
