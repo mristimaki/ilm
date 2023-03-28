@@ -50,10 +50,6 @@ Ichoosed the font for this quiz via [Google Fonts](https://fonts.google.com/) we
 
 When choosing the color theme for this quiz, I looked up the psychological effects of colors and chose accordingly. Green for balance and joy. Yellow and Orange for positivity and confidence.
 
-### The Icon
-
-Picture with total score page and icon along with description
-
 ## Features
 
 ### Page Elements
@@ -78,13 +74,13 @@ The game area is simplistic with queston and three options to choose from. In th
 
 #### The Final Scores Area
 
-ADD PICTURE
+<img width="982" alt="resultpage" src="https://user-images.githubusercontent.com/121927123/228336627-09f885f2-4517-46b8-8918-e8c909cffaaa.png">
 
 When the user has answered all the questions, the final scores will appear as well as a Play Again-button that provides the user to play the Quiz one or more times again.
 
 
 ### Feature Ideas
-- Green color on the option-button if it is true and red color if it is false to provide the user with a little more feedback than just the scores increasing when a answer was true. 
+- Instead of just having the green or red color showing if the clicked button was true or false, I would like to add classes to all of the buttons so that it shows more clearly which answers was true or false. 
 
 
 ## Technologies used
@@ -92,7 +88,7 @@ When the user has answered all the questions, the final scores will appear as we
 ### Languages
 * HTML: Page markup.
 * CSS: Styling.
-* JavaScript:
+* JavaScript: Running functions for a interactive page.
 
 ### Libraries
 * [Google Fonts](https://fonts.google.com/): Font style.
@@ -108,8 +104,10 @@ When the user has answered all the questions, the final scores will appear as we
 The design of [The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) is responsive in that way that I have designed it to fit into smaller devices as well as bigger screens. The design stays the same. I've tested all pages both for desktop and mobile via **Lighthouse** tool and got these results:
 
 ### Desktop 
+<img width="512" alt="lighthouse_desktop" src="https://user-images.githubusercontent.com/121927123/228337238-6bca577f-c61c-4b92-8ba0-33fa1f913fb0.png">
 
 ### Mobile
+<img width="512" alt="lighthouse_mobile" src="https://user-images.githubusercontent.com/121927123/228337291-b6f2a5e0-ce4c-40d6-bfcc-2081c3a79871.png">
 
 ### General testing
 - I have tested my code troughout the buildup with the **inspect** tool to see what impact the code made as well as if any errors occures in the console.
@@ -122,13 +120,15 @@ The design of [The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) is responsiv
 
 ### Bugs
 - Difficulties displaying the questions and answers. After much testing I finally realized that I didn't need lastElementChild to display the answers of the array, so when I removed that it all worked.
-- Difficulties with checking the correct answer, due to the structure of my Q&A array, i needed to get the questions via:..... 
+- Difficulties with checking the correct answer, due to the structure of my Q&A array, i needed to get the questions via: 
 - I firstly had a next button but removed that since it seemed to cause a lot of trouble for my code. I used the setTimeout function instead to automatically skip to the next question once one of the options is clicked.
-- Difficulties with adding the correct and incorrect classes to users option, to change into green if correct and red if incorrect......
+- Difficulties with adding the correct and incorrect classes to users option, to change into green if correct and red if incorrect. Fixed when I added the classes inside of my displayQuestions function's for loop instead of inside the checkAnswer function.
+- I have canged the whole structure of my page several times and at the beginning of the project I started it all over and deleted my first repositry and started from scratch with this repositry instead. It seems that my Questions and Answers array [taken from another code](https://github.com/Code-Institute-Submissions/Quiz-me-Sailor/blob/main/assets/js/script.js) has been a big issue in why things hasn't worked out as they should in my code. 
 
 ### Unfixed Bugs
 - When script.js is checked in [JSHint](https://jshint.com/), I get warnings about "is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)."
 - When script.js is checked in [JSHint](https://jshint.com/), I get "unused variable disableOptions()". But this is targeted from within the index.html with onclick="disableOptions".
+- I have tried to add a class style to the Play Again-button but for some reason it does only work to add color and size to text, background colors and so on does not work.
 
 ## Deployment
 
