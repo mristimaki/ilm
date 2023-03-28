@@ -37,7 +37,7 @@ document.getElementById('start-button').addEventListener('click', () => {
 });
 
 /**
- * questions and answers
+ * questions and answers array
  */
 let myQuestions = [
     {
@@ -125,6 +125,9 @@ let myQuestions = [
 let currentQuestion = 0;
 let score = 0;
 
+/**
+ * function to start the game
+ */
 function startGame() {
 
     textQuestion.innerHTML = myQuestions[0].question;
@@ -138,6 +141,10 @@ function startGame() {
 
 }
 
+
+/**
+ * function to display the questions and answers from array
+ */
 function displayQuestions() {
 
     //display question from array
@@ -159,6 +166,7 @@ function displayQuestions() {
     }
     */
     
+    //enables options again once the user gets to next question
     enableOptions();
     console.log(displayQuestions);
 }
@@ -173,7 +181,7 @@ function checkAnswer() {
     console.log(checkAnswer);
     
     let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true);
-    
+        //checks if answer is true or false as well as updating score
         if (correctAnswer.option === this.innerText){  
             /** 
             this.classList.add('correct');
@@ -196,7 +204,8 @@ function checkAnswer() {
 
 
 /**
- * function to go to next question
+ * function to go to next question and at end of game, displays the result area
+ * and play again-button
  */
 function nextQuestion() {
 
@@ -204,6 +213,7 @@ function nextQuestion() {
         currentQuestion += 1;
         displayQuestions();
     } else {
+        //hides and shows the right content to page when game is finished
         quiz.style.display = 'none';
         scoreArea.style.display = 'none';
         start.style.display = 'none';
@@ -215,7 +225,7 @@ function nextQuestion() {
 }
 
 /**
- * function that disable options once one is clicked
+ * function that disable answer options once one is clicked
  */
 function disableOptions() {
 
@@ -226,7 +236,7 @@ function disableOptions() {
 }
 
 /**
- * function to enable options when next question is comming
+ * function to enable answer options when next question is comming
  */
 function enableOptions(){
 
@@ -237,7 +247,7 @@ function enableOptions(){
 }
 
 /**
- * increment current score 
+ * increment score both current and at the end of result page
  */
 function incrementScore() {
 
