@@ -10,7 +10,6 @@ const scoreArea = document.getElementById('score-area');
 const textQuestion = document.getElementById('question-que');
 const textOptions = document.getElementsByClassName('choice-que');
 const currentScore = document.getElementById('current-score');
-const totalScore = document.getElementById('total-score');
 const playAgain = document.getElementById('play-again');
 
  /* 
@@ -101,8 +100,8 @@ let myQuestions = [
         question: '8. Prophets is mentioned (by name) in the Quran..',
         options: [
             {option: '25', answer: true},
-            {option: '3', answer: false},
-            {option: '9', answer: false}
+            {option: '33', answer: false},
+            {option: '19', answer: false}
         ],
     },
     {
@@ -191,7 +190,7 @@ function checkAnswer() {
                 console.log("Sorry, that was not correct. Try again next time!");
                 }
     
-    setTimeout(nextQuestion, 3000);
+    setTimeout(nextQuestion, 1000);
     console.log(correctAnswer);
     
 }
@@ -202,8 +201,17 @@ function checkAnswer() {
  */
 function nextQuestion() {
 
-    currentQuestion += 1;
-    displayQuestions();
+    if (currentQuestion <= 10) {
+        currentQuestion += 1;
+        displayQuestions();
+    } else {
+        quiz.style.display = 'none';
+        scoreArea.style.display = 'none';
+        start.style.display = 'none';
+        startButton.style.display = 'none';
+        result.style.display = 'contents';
+        playAgain.style.display = 'contents';
+    }
 
 }
 
@@ -248,6 +256,7 @@ function enableOptions(){
 function incrementScore() {
 
     document.getElementById('current-score').innerText = score;
+    document.getElementById('total-score').innerText = score;
 
 }
 
