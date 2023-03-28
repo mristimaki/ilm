@@ -43,7 +43,7 @@
 
 ### The Font
 
-Ichoosed the font for this quiz via [Google Fonts](https://fonts.google.com/) website. I chose the particular font as I wanted a elegant and clean look to the quiz.
+I choosed the font for this quiz via [Google Fonts](https://fonts.google.com/) website. I chose the particular font as I wanted a elegant and clean look to the quiz.
 
 ### The Colors
 <img width="841" alt="colorpalette" src="https://user-images.githubusercontent.com/121927123/226247355-87ef98b3-19f1-4cd2-aa70-c5b25a1ada64.png">
@@ -120,7 +120,7 @@ The design of [The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) is responsiv
 
 ### Bugs
 - Difficulties displaying the questions and answers. After much testing I finally realized that I didn't need lastElementChild to display the answers of the array, so when I removed that it all worked.
-- Difficulties with checking the correct answer, due to the structure of my Q&A array, i needed to get the questions via: 
+- Difficulties with checking the correct answer, due to the structure of my Q&A array, i needed to get the questions via this code: let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true)
 - I firstly had a next button but removed that since it seemed to cause a lot of trouble for my code. I used the setTimeout function instead to automatically skip to the next question once one of the options is clicked.
 - Difficulties with adding the correct and incorrect classes to users option, to change into green if correct and red if incorrect. Fixed when I added the classes inside of my displayQuestions function's for loop instead of inside the checkAnswer function.
 - I have canged the whole structure of my page several times and at the beginning of the project I started it all over and deleted my first repositry and started from scratch with this repositry instead. It seems that my Questions and Answers array [taken from another code](https://github.com/Code-Institute-Submissions/Quiz-me-Sailor/blob/main/assets/js/script.js) has been a big issue in why things hasn't worked out as they should in my code. 
