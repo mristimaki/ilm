@@ -148,7 +148,6 @@ function displayQuestions() {
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
     }
 
-
     /** 
     //remove class when new question is displayed
     if (btn.classList.contains('incorrect')) {
@@ -201,7 +200,7 @@ function checkAnswer() {
  */
 function nextQuestion() {
 
-    if (currentQuestion <= 10) {
+    if (currentQuestion < 9) {
         currentQuestion += 1;
         displayQuestions();
     } else {
@@ -212,19 +211,6 @@ function nextQuestion() {
         result.style.display = 'contents';
         playAgain.style.display = 'contents';
     }
-
-}
-
-/**
- * function to set timer when a answer is clicked, then go to next question
- */
-let timeout = undefined;
-
-function startTimeout(callback) {
-
-    timeout = setTimeout(callback, 3000);
-
-    console.log(startTimeout);
 
 }
 
