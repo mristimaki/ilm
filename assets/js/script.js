@@ -12,6 +12,7 @@ const textOptions = document.getElementsByClassName('choice-que');
 const currentScore = document.getElementById('current-score');
 const playAgain = document.getElementById('play-again');
 
+//gets the user to startpage when clicked
 playAgain.addEventListener ('click', ()=> {
     window.location.assign("index.html");
 })
@@ -158,6 +159,7 @@ function displayQuestions() {
     //display options from array
     for (let i = 0; i < textOptions.length; i++) {
         let btn = textOptions[i];
+        //remove class when next question displays
         if (btn.classList.contains('incorrect')) {
             btn.classList.remove('incorrect');
         }
@@ -167,11 +169,6 @@ function displayQuestions() {
         }
         btn.innerHTML = myQuestions[currentQuestion].options[i].option;
     }
-
-    /** 
-    //remove class when new question is displayed
-    
-    */
     
     //enables options again once the user gets to next question
     enableOptions();
@@ -189,14 +186,16 @@ function checkAnswer() {
     
     let correctAnswer = myQuestions[currentQuestion].options.find(element => element.answer === true);
         //checks if answer is true or false as well as updating score
-       
         if (correctAnswer.option === this.innerText){
             score++;
             incrementScore();
+            //add class if correct
             this.classList.add('correct');
         } else {
+            //add class if incorrect
             this.classList.add('incorrect');
         };
+    //skips to next question after 1sec when answer is clicked
     setTimeout(nextQuestion, 1000) 
     console.log(correctAnswer);
     
@@ -219,14 +218,7 @@ function nextQuestion() {
         startButton.style.display = 'none';
         result.style.display = 'contents';
         playAgain.style.display = 'contents';
-        startOver();
     }
-
-}
-
-function startOver() {
-
-    document.getElementById('play-again').addEventListener('click', startGame);
 
 }
 
