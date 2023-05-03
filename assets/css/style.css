@@ -43,11 +43,6 @@ li {
     cursor: pointer;
 }
 
-.choice-que:hover {
-    background-color: #f6c64c;
-    color: #fff;
-}
-
 /* style for correct and incorrect answer */
 .correct {
     background-color: #b1d3ad;
