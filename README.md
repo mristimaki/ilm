@@ -1,6 +1,6 @@
 # The Ilm Quiz
 
-[The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) *(or The Knowledge Quiz to translate it)*, is a quiz with different statements to learn fun and scientific facts about islam. This quiz is built to make people gain knowledge about some of the misconseptions about islam and also highlight some mindblowing scientific facts that is in the Quran, that most people don't know about. 
+[The Ilm Quiz](https://mristimaki.github.io/ilmQuiz/) *(or The Knowledge Quiz to translate it)*, is a quiz with different statements to learn fun and scientific facts about islam. This quiz is built to make people gain knowledge about some of the misconseptions about Islam and also highlight some mindblowing scientific facts that is in the Quran, that most people don't know about. I have chosen to make this quiz as simple as possible, with no further heavy information just to keep it simple and fun, if the user would want to look these things up it's the users choice to dig deeper into the different subjects. 
 <br>
 <br>
 <img width="992" alt="amiresponsive" src="https://user-images.githubusercontent.com/121927123/228022066-3802728f-6a02-4420-b435-18f11a4a5915.png">
@@ -14,7 +14,7 @@
 **The target audience for The Ilm Quiz:**
 
 - People who wants to play a fun quiz and still learn.
-- People who wants to play and gain scientific knowledge about islam.
+- People who wants to play and gain scientific knowledge about Islam.
 
 **User goals are:**
 
@@ -148,6 +148,11 @@ https://mristimaki.github.io/ilmQuiz/
 
 ### Code
 - My Questions and Answers array is taken from this [Code Institute Submission](https://github.com/Code-Institute-Submissions/Quiz-me-Sailor/blob/main/assets/js/script.js)
+- I want to give thanks to the assessor for the site feedback to improve my code. 
+  <br>
+  The improvements that I have made based on this are as follows:
+  - Since the hover effect on the answer-buttons were overriding the effect of the buttons turning green or red if the answer is true or false, I have removed the hover effect, since the feedback to the user if the answer was right or wrong is more important than the hover effect.
+  - I have also improved the responsive design with adding media queries to smaller screens as well as removing width and height to the body in my css code that was disturbing the other styling to the site and not centering everything properly. 
 
 ### Content
 - The information to the Quiz is taken from:
